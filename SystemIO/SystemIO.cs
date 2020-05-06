@@ -7,7 +7,7 @@ namespace SystemIO
         public static void Main(string[] args)
         {
             Console.WriteLine("THE Bucket List");
-            Console.Write("1. Add an adventure \n2. Remove an adventure \n3. View your adventures \n4. Exit \n\n");
+            Console.Write("1. View your adventures \n\n2. Add an adventure \n3. Remove an adventure \n4. Exit \n\n");
             Console.WriteLine("Type the corresponding number to the option you'd like to choose:");
             string userInput = Console.ReadLine();
 
