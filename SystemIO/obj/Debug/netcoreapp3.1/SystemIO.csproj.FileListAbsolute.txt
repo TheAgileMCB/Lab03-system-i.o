@@ -1,0 +1,13 @@
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.exe
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.deps.json
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.runtimeconfig.json
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.runtimeconfig.dev.json
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.dll
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\bin\Debug\netcoreapp3.1\SystemIO.pdb
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.csprojAssemblyReference.cache
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.csproj.CoreCompileInputs.cache
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.AssemblyInfoInputs.cache
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.AssemblyInfo.cs
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.dll
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.pdb
+C:\Users\mcb4r\OneDrive\Desktop\github\code-401\Lab03-system-i.o\SystemIO\obj\Debug\netcoreapp3.1\SystemIO.genruntimeconfig.cache

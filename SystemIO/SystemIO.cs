@@ -2,11 +2,13 @@
 
 namespace SystemIO
 {
-    class Program
+    public class SystemIO
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("THE Bucket List");
+            Console.Write("Add an adventure \n Remove an adventure \n View your adventures \n Exit \n\n");
+            
         }
     }
 }
