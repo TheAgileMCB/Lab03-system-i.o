@@ -8,13 +8,14 @@ namespace SystemIO
     {
         public static void Main(string[] args)
         {
-            OpenDocument(path);
+            BeginBucketList(path);
             bool showMenu = true;
             while (showMenu)
             {
                 showMenu = MainMenu();
             }
         }
+
 
         public static bool MainMenu()
         {
@@ -30,7 +31,9 @@ namespace SystemIO
                     return true;
 
                 case "2":
-                    AddAdventure(path);
+                    Console.WriteLine("Add your adventure!");
+                    string newAdventure = Console.ReadLine();
+                    AddAdventure(path, newAdventure);
                     return true;
 
                 case "3":
@@ -46,41 +49,32 @@ namespace SystemIO
             }
         }
 
-        private static string path = "BucketList.txt";
 
-        public static void OpenDocument(string path)
+        public static string path = "BucketList.txt";
+
+
+        public static void BeginBucketList(string path)
         {
         string[] heading = new[] { "Welcome to THE Bucket List. Your desires await you." };
         File.WriteAllLines(path, heading);
         }
 
-        public static string AddAdventure(string path)
+
+        public static void AddAdventure(string path, string newAdventure)
         {
-            // Console.WriteLine(path);
-            //string path = "BucketList.txt";
-
-            Console.WriteLine("Add your adventure!");
-
-            string[] content = new[] { Console.ReadLine() };
+            string[] content = new[] { newAdventure };
             File.AppendAllLines(path, content);
-            return path;
+            Console.WriteLine("Awesome idea! Your rad adventure has been added!");
         }
+
+
         public static string RemoveAdventure()
         {
             return "remove";
         }
-        public static string ViewAdventures(string path)
+        public static void ViewAdventures(string path)
         {
-            //if (path == false)
-            //{
-            //    Console.WriteLine("Please add an adventure!");
-            //}
-            //else
-            //{
-            //    File.WriteAllLines(path);
-            //}
-
-            return "view";
+                File.ReadAllLines(path);
         }
 
     }

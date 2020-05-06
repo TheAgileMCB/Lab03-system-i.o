@@ -1,8 +1,10 @@
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Xunit;
+using Xunit.Sdk;
 
 namespace SystemIO.Tests
 {
@@ -26,6 +28,21 @@ namespace SystemIO.Tests
 
         }
 
+        [Fact]
+        public void Can_add_adventure()
+        {
+            string path = SystemIO.path;
+
+            string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
+            string[] actual = new string[] { SystemIO.ViewAdventures(path) };
+
+            File.AppendAllLines(path, contentsToAppend);
+
+
+            //DateTime.Now.ToString
+            Assert.Contains(contentsToAppend, actual);
+
+                }
         [Fact]
         public void Can_append_bucket_list()
         {
