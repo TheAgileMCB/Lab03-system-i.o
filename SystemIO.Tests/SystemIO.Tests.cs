@@ -33,7 +33,7 @@ namespace SystemIO.Tests
         public void Can_add_adventure()
         {
             // Arrange
-            string path = SystemIO.path;
+            string path = SystemIO.GetPath();
             string newAdventure = DateTime.Now.ToString();
 
             // Act
@@ -95,7 +95,7 @@ namespace SystemIO.Tests
         [Fact]
         public void Can_use_RemoveAdventure()
         {
-            string path = SystemIO.path;
+            string path = SystemIO.GetPath();
             File.WriteAllLines(path, new[] { "one", "two", "three" });
 
             //string[] contentsToAppend = new string[] { DateTime.Now.ToString() };

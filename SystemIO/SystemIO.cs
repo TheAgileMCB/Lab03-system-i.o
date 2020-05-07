@@ -27,7 +27,8 @@ namespace SystemIO
             switch (userInput)
             {
                 case "1":
-                    ViewAdventures(path);
+                    string[] adventures = ViewAdventures(path);
+                    Console.Write(adventures);
                     return true;
 
                 case "2":
@@ -52,7 +53,12 @@ namespace SystemIO
         }
 
 
-        public static string path = "BucketList.txt";
+        private static string path = "BucketList.txt";
+
+        public static string GetPath()
+        {
+            return path;
+        }
 
 
         public static void BeginBucketList(string path)
