@@ -37,7 +37,9 @@ namespace SystemIO
                     return true;
 
                 case "3":
-                    RemoveAdventure();
+                    Console.WriteLine("Changed your mind? Remove an adventure!");
+                    string badAdventure = Console.ReadLine();
+                    RemoveAdventure(path, badAdventure);
                     return true;
 
                 case "4":
@@ -57,6 +59,7 @@ namespace SystemIO
         {
             string[] heading = new[] { "Welcome to THE Bucket List. Your desires await you." };
             File.WriteAllLines(path, heading);
+            
         }
 
 
@@ -69,9 +72,13 @@ namespace SystemIO
         }
 
 
-        public static string RemoveAdventure()
+        public static void RemoveAdventure(string path, string badAdventure)
         {
-            return "remove";
+            string[] adventures = File.ReadAllLines(path);
+
+            string[] result = RemoveItemFromArray(adventures, badAdventure);
+
+            File.WriteAllLines(path, result);
         }
         public static string[] ViewAdventures(string path)
         {
@@ -79,5 +86,28 @@ namespace SystemIO
 
         }
 
+        public static string[] RemoveItemFromArray(string[] array, string badAdventure)
+        {
+            int valueCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == badAdventure) 
+                {
+                    valueCount++;
+                }
+            }
+            string[] result = new string[array.Length - 1];
+
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] != badAdventure)
+                {
+                    result[j++] = array[i];
+                }
+            }
+            return result;
+        }
+
+            
     }
 }

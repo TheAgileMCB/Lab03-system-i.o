@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,7 +42,7 @@ namespace SystemIO.Tests
             // Assert
             string[] actual = SystemIO.ViewAdventures(path);
             Assert.Contains(newAdventure, actual);
-        }
+           }
 
         [Fact]
         public void Can_append_bucket_list()
@@ -95,22 +96,18 @@ namespace SystemIO.Tests
         public void Can_use_RemoveAdventure()
         {
             string path = SystemIO.path;
+            File.WriteAllLines(path, new[] { "one", "two", "three" });
 
-            string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
+            //string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
             //string[] actual = new string[] {  };
 
-            File.AppendAllLines(path, contentsToAppend);
+            
 
-            List<string> quotelist = File.ReadAllLines(path).ToList();
-            string secondItem = quotelist[1];
-            quotelist.RemoveAt(1);
-            File.WriteAllLines(path, quotelist.ToArray());
+            //File.AppendAllLines(path, "two");
 
-            // Assert | Then
-            string[] expectedContents = new[] { "See Lady Gaga" };
-            string[] actualContents = File.ReadAllLines(path);
-            Assert.DoesNotContain(expectedContents, actualContents);
+            SystemIO.RemoveAdventure(path, "two");
 
+            Assert.DoesNotContain("two", File.ReadAllLines(path));
 
         }
     }
