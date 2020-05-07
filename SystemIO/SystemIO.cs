@@ -55,8 +55,8 @@ namespace SystemIO
 
         public static void BeginBucketList(string path)
         {
-        string[] heading = new[] { "Welcome to THE Bucket List. Your desires await you." };
-        File.WriteAllLines(path, heading);
+            string[] heading = new[] { "Welcome to THE Bucket List. Your desires await you." };
+            File.WriteAllLines(path, heading);
         }
 
 
@@ -74,7 +74,8 @@ namespace SystemIO
         }
         public static void ViewAdventures(string path)
         {
-                File.ReadAllLines(path);
+            Console.WriteLine(path);
+               Console.Write(File.ReadAllLines(path));
         }
 
     }

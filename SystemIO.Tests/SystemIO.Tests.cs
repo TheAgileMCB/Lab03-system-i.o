@@ -34,12 +34,13 @@ namespace SystemIO.Tests
             string path = SystemIO.path;
 
             string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
-            string[] actual = new string[] { SystemIO.ViewAdventures(path) };
+            string[] actual = SystemIO.ViewAdventures(path);
 
             File.AppendAllLines(path, contentsToAppend);
 
 
             //DateTime.Now.ToString
+           // Assert.True(.Contains(contentsToAppend));
             Assert.Contains(contentsToAppend, actual);
 
                 }
@@ -89,6 +90,29 @@ namespace SystemIO.Tests
             string[] expectedContents = new[] { "See Lady Gaga" };
             string[] actualContents = File.ReadAllLines(path);
             Assert.Equal(expectedContents, actualContents);
+        }
+
+        [Fact]
+        public void Can_use_RemoveAdventure()
+        {
+            string path = SystemIO.path;
+
+            string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
+            //string[] actual = new string[] {  };
+
+            File.AppendAllLines(path, contentsToAppend);
+
+            List<string> quotelist = File.ReadAllLines(path).ToList();
+            string secondItem = quotelist[1];
+            quotelist.RemoveAt(1);
+            File.WriteAllLines(path, quotelist.ToArray());
+
+            // Assert | Then
+            string[] expectedContents = new[] { "See Lady Gaga" };
+            string[] actualContents = File.ReadAllLines(path);
+            Assert.Contains(expectedContents, actualContents);
+
+
         }
     }
 }
