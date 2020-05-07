@@ -65,6 +65,7 @@ namespace SystemIO
             string[] content = new[] { newAdventure };
             File.AppendAllLines(path, content);
             Console.WriteLine("Awesome idea! Your rad adventure has been added!");
+           
         }
 
 
@@ -72,10 +73,10 @@ namespace SystemIO
         {
             return "remove";
         }
-        public static void ViewAdventures(string path)
+        public static string[] ViewAdventures(string path)
         {
-            Console.WriteLine(path);
-               Console.Write(File.ReadAllLines(path));
+            return File.ReadAllLines(path);
+
         }
 
     }

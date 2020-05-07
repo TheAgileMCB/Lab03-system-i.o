@@ -31,18 +31,23 @@ namespace SystemIO.Tests
         [Fact]
         public void Can_add_adventure()
         {
+            // Arrange
             string path = SystemIO.path;
+            string newAdventure = DateTime.Now.ToString();
+            string[] content = new[] { newAdventure };
+            
 
-            string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
+            // Act
+            SystemIO.AddAdventure(path, newAdventure);
+           
+
+            // Assert
             string[] actual = SystemIO.ViewAdventures(path);
-
-            File.AppendAllLines(path, contentsToAppend);
-
-
+            Assert.Contains(newAdventure, actual);
+            
             //DateTime.Now.ToString
            // Assert.True(.Contains(contentsToAppend));
-            Assert.Contains(contentsToAppend, actual);
-
+            
                 }
         [Fact]
         public void Can_append_bucket_list()
@@ -92,27 +97,27 @@ namespace SystemIO.Tests
             Assert.Equal(expectedContents, actualContents);
         }
 
-        [Fact]
-        public void Can_use_RemoveAdventure()
-        {
-            string path = SystemIO.path;
+        //[Fact]
+        //public void Can_use_RemoveAdventure()
+        //{
+        //    string path = SystemIO.path;
 
-            string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
-            //string[] actual = new string[] {  };
+        //    string[] contentsToAppend = new string[] { DateTime.Now.ToString() };
+        //    //string[] actual = new string[] {  };
 
-            File.AppendAllLines(path, contentsToAppend);
+        //    File.AppendAllLines(path, contentsToAppend);
 
-            List<string> quotelist = File.ReadAllLines(path).ToList();
-            string secondItem = quotelist[1];
-            quotelist.RemoveAt(1);
-            File.WriteAllLines(path, quotelist.ToArray());
+        //    List<string> quotelist = File.ReadAllLines(path).ToList();
+        //    string secondItem = quotelist[1];
+        //    quotelist.RemoveAt(1);
+        //    File.WriteAllLines(path, quotelist.ToArray());
 
-            // Assert | Then
-            string[] expectedContents = new[] { "See Lady Gaga" };
-            string[] actualContents = File.ReadAllLines(path);
-            Assert.Contains(expectedContents, actualContents);
+        //    // Assert | Then
+        //    string[] expectedContents = new[] { "See Lady Gaga" };
+        //    string[] actualContents = File.ReadAllLines(path);
+        //    Assert.Contains(expectedContents, actualContents);
 
 
-        }
+        //}
     }
 }
