@@ -34,17 +34,13 @@ namespace SystemIO.Tests
             // Arrange
             string path = SystemIO.path;
             string newAdventure = DateTime.Now.ToString();
-            string[] content = new[] { newAdventure };
-
 
             // Act
             SystemIO.AddAdventure(path, newAdventure);
 
-
             // Assert
             string[] actual = SystemIO.ViewAdventures(path);
             Assert.Contains(newAdventure, actual);
-
         }
 
         [Fact]
